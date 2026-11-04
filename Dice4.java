@@ -46,12 +46,29 @@ public class Dice4 {
     
     public void runTest12In24Rolls(int howMany)
     {
+        int count = 0,counter = 0;
+        while(counter < howMany){
+            if(takeATurnA12In24Rolls())
+                count++;
+            counter++;
+        }
+        System.out.println(count + " sum of 12 in 24 rolls tried " + howMany + " times : " + count * 1.0 / howMany);
           //your code here    
     }
     
     
     private boolean takeATurnA12In24Rolls(){
-    	 //your code here
+    	int counter = 0;
+        int count = 0;
+        while(counter < 24)
+        {
+                this.roll();
+                if(die2 == 6)
+                    count++;
+                counter++;
+                if(count == 2)
+                    return true;    
+        }
         return false;
 
     }
